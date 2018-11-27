@@ -35,8 +35,8 @@ spring:
       ddl-auto: "validate"
     properties:
       hibernate:
-        show_sql: true
-        use_sql_comments: true
+        show_sql: false
+        use_sql_comments: false
         format_sql: true
   http:
     multipart:
@@ -71,12 +71,16 @@ itembank:
     errorQueue:
       queueName: "iat_item_event_queue.dlq"
   itemBulkUpdate:
-    requestQueue:
-      queueName: "iat.item.bulk.update.request"
-    responseQueue:
-      queueName: "iat.item.bulk.update.response"
-    errorQueue:
-      queueName: "iat.item.bulk.update.dlq"
+    events:
+      requestQueue:
+        queueName: "iat.item.bulk.update.request"
+      responseQueue:
+        queueName: "iat.item.bulk.update.response"
+      errorQueue:
+        queueName: "iat.item.bulk.update.dlq"
+    asl:
+      exclusionPatterns:
+        - "**/__MACOSX/**"
 
 tasks:
   itemCleanupThresholdMillis : "7200000"
@@ -91,8 +95,8 @@ logging:
     org:
       opentestsystem:
         ap:
-          ims: "debug"
-          common: "debug"
+          ibms: "debug"
+          common: "info"
 
 ---
 spring:
