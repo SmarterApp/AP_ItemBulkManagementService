@@ -20,7 +20,8 @@ itembank:
   test:
     enabled: "true"
   enabled:
-    manager: false
+    broker: false
+    bulkItemUpdate: false
     database: false
     producer: false
   systemVersion: "iat-20"

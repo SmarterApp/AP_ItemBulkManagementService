@@ -30,6 +30,7 @@ spring:
     username: "${DB_USER}"
     password: "${DB_PASSWORD}"
     validationQuery: "SELECT 1"
+    max-active: 2
   jpa:
     hibernate:
       ddl-auto: "validate"
@@ -110,7 +111,6 @@ spring:
   profiles: dev
   datasource:
     url: "jdbc:postgresql://imrt-qa-db.cjqp2fdamfoh.us-east-2.rds.amazonaws.com:5432/iat"
-    max-active: 2
 
 itembank:
   group: "iat-development"
@@ -120,7 +120,6 @@ spring:
   profiles: uat
   datasource:
     url: "jdbc:postgresql:imrt-db-uat-aurora.cjqp2fdamfoh.us-east-2.rds.amazonaws.com"
-    max-active: 2
 
 itembank:
   group: "iat-uat"
