@@ -42,7 +42,8 @@ spring:
   http:
     multipart:
       location: "${java.io.tmpdir}"
-      maxFileSize: "10MB"
+      maxFileSize: "100MB"
+      maxRequestSize: "100MB"
 
 itembank:
   host: "https://gitlab-dev.smarterbalanced.org"
@@ -53,7 +54,7 @@ itembank:
   localBaseDir: "${HOME}/ItemBank"
   apiVersion: "/api/v4"
   bankKey: "187"
-  systemVersion: "iat-25"
+  systemVersion: "iat-27"
   itemBankViewerUrl: "http://itemreview.smarterbalanced.org/iris/Pages/item.xhtml?bankId=${itembank.bankKey}&type=%s&id=%s"
   enabled:
     broker: true
@@ -80,6 +81,7 @@ itembank:
       errorQueue:
         queueName: "iat.item.bulk.update.dlq"
     asl:
+      sendResponseEvery: 2
       exclusionPatterns:
         - "**/__MACOSX/**"
 
