@@ -42,8 +42,8 @@ spring:
   http:
     multipart:
       location: "${java.io.tmpdir}"
-      maxFileSize: "100MB"
-      maxRequestSize: "100MB"
+      maxFileSize: "1000MB"
+      maxRequestSize: "1000MB"
 
 itembank:
   host: "https://gitlab-dev.smarterbalanced.org"
