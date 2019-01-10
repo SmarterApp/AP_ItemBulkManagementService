@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4c93f78b-7c9f-48d9-9565-a48d9659b2b2",
+		"_postman_id": "209329c6-3ef9-4c78-b961-4c2c10577861",
 		"name": "IBMS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -229,6 +229,105 @@
 						"bulk",
 						"id",
 						"71"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Assign",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"],\n\t\"userNames\" : [\"aponce@fairwaytech.com\", \"tessara@fairwaytech.com\", \"tmiller@fairwaytech.com\", \"rmitchell@fairwaytech.com\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"assign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Unassign",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"],\n\t\"userNames\" : [\"aponce@fairwaytech.com\", \"tessara@fairwaytech.com\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"unassign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Unassign All",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"unassignall"
 					]
 				}
 			},
