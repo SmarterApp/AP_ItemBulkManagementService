@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4c93f78b-7c9f-48d9-9565-a48d9659b2b2",
+		"_postman_id": "729d1f08-18b0-4f86-948f-5a5d9b689f05",
 		"name": "IBMS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -13,46 +13,6 @@
 				"body": {
 					"mode": "raw",
 					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8088/api/v1/items/bulk/asl",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8088",
-					"path": [
-						"api",
-						"v1",
-						"items",
-						"bulk",
-						"asl"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "ASL Bulk Update",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"type": "file",
-							"src": ""
-						}
-					]
 				},
 				"url": {
 					"raw": "http://localhost:8088/api/v1/items/bulk/asl",
@@ -100,6 +60,101 @@
 			"response": []
 		},
 		{
+			"name": "GET User Glossary Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/glossary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"glossary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Job Progress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/id/71",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"id",
+						"71"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ASL Bulk Update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/asl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"asl"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Braille Bulk Update",
 			"request": {
 				"method": "POST",
@@ -134,33 +189,6 @@
 						"items",
 						"bulk",
 						"braille"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET User Glossary Jobs",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8088/api/v1/items/bulk/glossary",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8088",
-					"path": [
-						"api",
-						"v1",
-						"items",
-						"bulk",
-						"glossary"
 					]
 				}
 			},
@@ -207,16 +235,22 @@
 			"response": []
 		},
 		{
-			"name": "GET Job Progress",
+			"name": "Bulk Assign",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"],\n\t\"userNames\" : [\"aponce@fairwaytech.com\", \"tessara@fairwaytech.com\", \"tmiller@fairwaytech.com\", \"rmitchell@fairwaytech.com\"]\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8088/api/v1/items/bulk/id/71",
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -227,8 +261,74 @@
 						"v1",
 						"items",
 						"bulk",
-						"id",
-						"71"
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Unassign",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"],\n\t\"userNames\" : [\"aponce@fairwaytech.com\", \"tessara@fairwaytech.com\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Unassign All",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemIds\" : [\"200144\", \"200147\", \"200151\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/api/v1/items/bulk/assignments/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"api",
+						"v1",
+						"items",
+						"bulk",
+						"assignments",
+						"all"
 					]
 				}
 			},
