@@ -47,7 +47,7 @@ spring:
 
 itembank:
   systemUser:
-    userName: "iat_system_ibms@smarterbalanced.org"
+    userName: "iat-bulk@smarterbalanced.org"
     fullName: "Item Bulk Management Service"
   host: "https://gitlab-dev.smarterbalanced.org"
   accessToken: "${GITLAB_ACCESS_TOKEN}"
