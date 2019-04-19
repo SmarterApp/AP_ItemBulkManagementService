@@ -46,6 +46,9 @@ spring:
       maxRequestSize: "1000MB"
 
 itembank:
+  systemUser:
+    userName: "iat-bulk@smarterbalanced.org"
+    fullName: "Item Bulk Management Service"
   host: "https://gitlab-dev.smarterbalanced.org"
   accessToken: "${GITLAB_ACCESS_TOKEN}"
   user: "${GITLAB_USER}"
