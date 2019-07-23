@@ -54,7 +54,6 @@ itembank:
     fullName: "Item Bulk Management Service"
   enabled:
     broker: true
-    bulkItemUpdate: true
     database: true
     producer: true
   aws:
