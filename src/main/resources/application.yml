@@ -67,6 +67,9 @@ itembank:
     broker: true
     database: true
     producer: true
+  services:
+    permission:
+      url: "http://localhost:8182"
   aws:
     endpointUrl: "https://s3.us-east-2.amazonaws.com"
     region: "us-east-2"
