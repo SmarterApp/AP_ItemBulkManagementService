@@ -17,12 +17,12 @@ info:
 management:
   context-path: "/manage"
 
-api:
-  context-path: "/api"
-
 # cache expiration for things like workflow status
 cache:
   expirationSeconds: 30
+
+jwt:
+  secret: "\${TIMS_JWT_SECRET}"
 
 security:
   basic:
@@ -34,8 +34,6 @@ spring:
       fail_on_unknown_properties: false
     mapper:
       sort_properties_alphabetically: true
-  session:
-    enabled: \${SESSION_CLUSTER_ENABLED:true}
   datasource:
     url: "jdbc:postgresql://localhost:5432/iat"
     username: \${DB_USER}
